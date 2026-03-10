@@ -11,5 +11,5 @@ app.use(morgan('dev'));
 app.set('port', 8000);
 
 app.listen(app.get('port'), () =>{
-    console.log(`API escutando na porta 8000`);
+    console.log(`API listening on port 8000`);
 });

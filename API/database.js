@@ -10,5 +10,5 @@ mongoose.set('useUnifiedTopology', true);
 
 mongoose.set("", "");
 mongoose.connect(URI)
-.then (() => console.log('DB está Up'))
+.then (() => console.log('DB is Up'))
 .catch ((err) => console.log(err));

@@ -1,7 +1,7 @@
 const mongoose = required('mongoose');
 const Schema = mongoose.Schema;
 
-const salon = new Schema({
+const professional = new Schema({
     name: {
         type: String,
         require: [true, 'Name is mandatory'],
@@ -35,6 +35,4 @@ const salon = new Schema({
     }
 });
 
-salon.index({ geo: '2dsphere'});
-
-module.exports= mongoose.model('Salon', salon);
+module.exports= mongoose.model('Professional', professional);
