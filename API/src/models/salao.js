@@ -1,4 +1,4 @@
-const mongoose = required('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const salon = new Schema({
@@ -29,7 +29,7 @@ const salon = new Schema({
         coordinates: Array,
 
     },
-    createdAt: {
+    createdAt: { // Data  atual 
         type: Date,
         default: Date.now,
     }

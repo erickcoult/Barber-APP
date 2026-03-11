@@ -1,21 +1,23 @@
-const mongoose = required('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const professional = new Schema({
     name: {
         type: String,
-        require: [true, 'Name is mandatory'],
+        required: [true, 'Name is mandatory'],
     },
     photo: String,
     cover: String,
     email: {
         type: String,
-        require: [true, 'E-mail is mandatory'],
+        required: [true, 'E-mail is mandatory'],
     },
+
     password: {
         type: String,
         default: null, 
     },
+
     phone: String,
     address: {
         city: String,
@@ -24,12 +26,63 @@ const professional = new Schema({
         number: String,
         country: String,
     },
-    geo: {
+
+    date: {
         type: String,
-        coordinates: Array,
+        required: true
 
     },
-    createdAt: {
+
+    sex: {
+        type: String,
+        enum: ['M', 'F'],
+        required: true
+    },
+
+    status: {
+        type: Date,
+        required: true,
+        enum: ['A', 'I'],
+        default: 'A'
+    },
+
+    bankAccount: {
+       accountHolder:{          // titular da conta
+        type: string,
+        required: true
+       },
+       cpfCnpj:{
+        type: string,
+        required: true
+       }, 
+       bank:{
+        type: string,
+        required: true
+       }, 
+       type:{ 
+        type: string,
+        required: true
+       }, 
+       branch:{                 // agencia
+        type: string,
+        required: true
+       }, 
+       CD:{           //Dígito verificador (CheckDigit)
+        type: string,
+        required: true
+       }, 
+       accountNumber:{      // numero da conta
+        type: string,
+        required: true
+       }, 
+    },
+
+    recipientId: {
+        type: String,
+        required: true
+    },
+
+    createdAt: {            // Data do dia atual 
         type: Date,
         default: Date.now,
     }
