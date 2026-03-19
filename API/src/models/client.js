@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const professional = new Schema({
+const client = new Schema({
     name: {
         type: String,
         required: [true, 'Name is mandatory'],
@@ -18,7 +18,10 @@ const professional = new Schema({
         default: null, 
     },
 
-    phone: String,
+    phone: {
+        type: String,
+        required: true,
+    },
     address: {
         city: String,
         state: String,
@@ -30,13 +33,21 @@ const professional = new Schema({
     date: {
         type: String,
         required: true
- 
+
     },
 
     sex: {
         type: String,
         enum: ['M', 'F'],
         required: true
+    },
+
+    document: {
+        type: {
+            type: String,
+            enum: ['individual', 'corporation'],
+            required: true
+        }
     },
 
     status: {
@@ -46,41 +57,6 @@ const professional = new Schema({
         default: 'A'
     },
 
-    bankAccount: {
-       accountHolder:{          // titular da conta
-        type: string,
-        required: true
-       },
-       cpfCnpj:{
-        type: string,
-        required: true
-       }, 
-       bank:{
-        type: string,
-        required: true
-       }, 
-       type:{ 
-        type: string,
-        required: true
-       }, 
-       branch:{                 // agencia
-        type: string,
-        required: true
-       }, 
-       CD:{           //Dígito verificador (CheckDigit)
-        type: string,
-        required: true
-       }, 
-       accountNumber:{      // numero da conta
-        type: string,
-        required: true
-       }, 
-    },
-
-    recipientId: {
-        type: String,
-        required: true
-    },
 
     createdAt: {            // Data do dia atual 
         type: Date,
@@ -88,4 +64,4 @@ const professional = new Schema({
     }
 });
 
-module.exports= mongoose.model('Professional', professional);
+module.exports= mongoose.model('Client', client);

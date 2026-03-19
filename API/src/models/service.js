@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const services = new Schema({
+const service = new Schema({
     salonId: {
         type: mongoose.Types.ObjectID,
-        ref: 'Salon'
+        ref: 'Salon',
+        required: true,
     },
     title: {
         type: String,
@@ -42,4 +43,4 @@ const services = new Schema({
     }
 });
 
-module.exports= mongoose.model('Services', services);
+module.exports= mongoose.model('Service', service);
