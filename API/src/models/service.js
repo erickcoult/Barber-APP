@@ -34,7 +34,7 @@ const service = new Schema({
     status: {
         type: Date,
         required: true,
-        enum: ['A', 'I'],
+        enum: ['A', 'I'],    // Active and inactive
         default: 'A'
     },
     createdAt: { // Data  atual 

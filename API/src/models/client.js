@@ -53,7 +53,7 @@ const client = new Schema({
     status: {
         type: Date,
         required: true,
-        enum: ['A', 'I'],
+        enum: ['A', 'I'],    // Active and inactive
         default: 'A'
     },
 
