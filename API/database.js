@@ -1,14 +1,9 @@
 const mongoose = require('mongoose');
-const URI = '';
-
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', flase);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
+const URI = 'mongodb+srv://salonUser:dPd23tvOAIsALyfj@cluster0.9y75ynn.mongodb.net/?appName=Cluster0'; // <----após finalização, colocar na .env
 
 
 
-mongoose.set("", "");
+
 mongoose.connect(URI)
 .then (() => console.log('DB is Up'))
 .catch ((err) => console.log(err));
