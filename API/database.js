@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const URI = 'mongodb+srv://salonUser:dPd23tvOAIsALyfj@cluster0.9y75ynn.mongodb.net/?appName=Cluster0'; // <----após finalização, colocar na .env
+const URI = 'mongodb+srv://salonUser:dPd23tvOAIsALyfj@cluster0.9y75ynn.mongodb.net/Barber-App?appName=Cluster0'; // <----após finalização, colocar na .env
 
 
 
