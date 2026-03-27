@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Salon = require('../models/salon')
+const Service = require('../models/service')
 
 router.post('/', async(req, res) => {
 
@@ -12,5 +13,22 @@ router.post('/', async(req, res) => {
     }
 
 });
+
+router.get('/service/:salonId', async(req, res)=> {
+    try{ 
+        const { salonId} = req.params;
+        const service = await Service.find({
+            salonId,
+            status: 'A'
+        }).select('_id title');
+
+        res.json({
+            service: service.map((s) => ({ label : s.titulo, value: s._id})),
+        })
+    }catch(err) {
+        res.json({ error: true, message: err.message})
+    }
+
+})
 
 module.exports = router;
