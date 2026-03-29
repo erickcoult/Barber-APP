@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const service = new Schema({
     salonId: {
-        type: mongoose.Types.ObjectID,
+        type: mongoose.Types.ObjectId,
         ref: 'Salon',
         required: true,
     },
