@@ -12,6 +12,7 @@
   "dependencies": {
     "aws": "^0.0.3-2",
     "aws-sdk": "^2.1693.0",
+    "busboy": "^1.6.0",
     "busboy-body-parser": "^0.3.2",
     "connect-busboy": "^1.0.0",
     "express": "^5.2.1",

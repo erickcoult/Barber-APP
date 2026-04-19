@@ -1,11 +1,17 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const busboy = require ('connect-busboy');
+const busboyBodyParser = require ('busboy-body-parser');
+require('dotenv').config()
 require('./database');
 
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(busboy());
+app.use(busboyBodyParser());
+
 
 
 //Variables
