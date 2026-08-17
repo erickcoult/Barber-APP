@@ -4,12 +4,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon --env-file=.env index.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@turf/turf": "^7.4.0",
     "aws": "^0.0.3-2",
     "aws-sdk": "^2.1693.0",
     "busboy": "^1.6.0",

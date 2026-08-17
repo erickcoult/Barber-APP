@@ -4,17 +4,17 @@ const Schema = mongoose.Schema;
 const salon = new Schema({
     name: {
         type: String,
-        require: [true, 'Name is mandatory'],
+        required: [true, 'Name is mandatory'],
     },
     photo: String,
     cover: String,
     email: {
         type: String,
-        require: [true, 'E-mail is mandatory'],
+        required: [true, 'E-mail is mandatory'],
     },
     password: {
         type: String,
-        default: null, 
+        default: null,
     },
     phone: String,
     address: {
@@ -25,16 +25,18 @@ const salon = new Schema({
         country: String,
     },
     geo: {
-        type: String,
-        coordinates: Array,
-
+        type: {
+            type: String,
+            default: 'Point',
+        },
+        coordinates: [Number],
     },
-    createdAt: { // Data  atual 
+    createdAt: { // Current date
         type: Date,
         default: Date.now,
     }
 });
 
-salon.index({ geo: '2dsphere'});
+salon.index({ geo: '2dsphere' });
 
-module.exports= mongoose.model('Salon', salon);
+module.exports = mongoose.model('Salon', salon);

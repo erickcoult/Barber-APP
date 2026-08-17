@@ -32,11 +32,11 @@ const service = new Schema({
         required: true
     },
     status: {
-        type: Date,
-        required: true,
-        enum: ['A', 'I'],    // Active and inactive
-        default: 'A'
-    },
+    type: String,
+    required: true,
+    enum: ['A', 'I', 'D'],    // Active and inactive
+    default: 'A'
+},
     createdAt: { // Data  atual 
         type: Date,
         default: Date.now,
