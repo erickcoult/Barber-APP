@@ -58,7 +58,7 @@ const client = new Schema({
     },
 
 
-    createdAt: {            // Data do dia atual 
+    createdAt: {             
         type: Date,
         default: Date.now,
     }

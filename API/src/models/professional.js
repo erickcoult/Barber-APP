@@ -6,8 +6,10 @@ const professional = new Schema({
         type: String,
         required: [true, 'Name is mandatory'],
     },
+
     photo: String,
     cover: String,
+
     email: {
         type: String,
         required: [true, 'E-mail is mandatory'],
@@ -15,10 +17,11 @@ const professional = new Schema({
 
     password: {
         type: String,
-        default: null, 
+        default: null,
     },
 
     phone: String,
+
     address: {
         city: String,
         state: String,
@@ -30,7 +33,6 @@ const professional = new Schema({
     date: {
         type: String,
         required: true
- 
     },
 
     sex: {
@@ -40,52 +42,21 @@ const professional = new Schema({
     },
 
     status: {
-        type: Date,
+        type: String,
         required: true,
         enum: ['A', 'I'],
         default: 'A'
     },
 
-    bankAccount: {
-       accountHolder:{          // titular da conta
-        type: string,
-        required: true
-       },
-       cpfCnpj:{
-        type: string,
-        required: true
-       }, 
-       bank:{
-        type: string,
-        required: true
-       }, 
-       type:{ 
-        type: string,
-        required: true
-       }, 
-       branch:{                 // agencia
-        type: string,
-        required: true
-       }, 
-       CD:{           //Dígito verificador (CheckDigit)
-        type: string,
-        required: true
-       }, 
-       accountNumber:{      // numero da conta
-        type: string,
-        required: true
-       }, 
-    },
-
-    recipientId: {
+    stripeAccountId: {
         type: String,
         required: true
     },
 
-    createdAt: {            // Data do dia atual 
+    createdAt: {
         type: Date,
         default: Date.now,
     }
 });
 
-module.exports= mongoose.model('Professional', professional);
+module.exports = mongoose.model('Professional', professional);

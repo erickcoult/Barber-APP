@@ -31,7 +31,7 @@ const salon = new Schema({
         },
         coordinates: [Number],
     },
-    createdAt: { // Current date
+    createdAt: { 
         type: Date,
         default: Date.now,
     }

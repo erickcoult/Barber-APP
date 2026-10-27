@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
         const salon = await Salon.findById(req.params.id)
             .select('cover name address.city geo.coordinates phone');
 
-        // Distance
+        
         const distance = turf.distance(
             turf.point(salon.geo.coordinates),
             turf.point([-47.20038716239653, -23.075303854663254])

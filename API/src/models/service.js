@@ -15,11 +15,11 @@ const service = new Schema({
         type: Number,
         required: true
     },
-    commission: {           //em %
+    commission: {           //in %
         type: Number,
         required: true
     },
-    duration: {           // em Min
+    duration: {           // in Min
         type: Number,
         required: true
     },
@@ -34,10 +34,10 @@ const service = new Schema({
     status: {
     type: String,
     required: true,
-    enum: ['A', 'I', 'D'],    // Active and inactive
+    enum: ['A', 'I', 'D'],    // Active, inactive, Deleted
     default: 'A'
 },
-    createdAt: { // Data  atual 
+    createdAt: { 
         type: Date,
         default: Date.now,
     }

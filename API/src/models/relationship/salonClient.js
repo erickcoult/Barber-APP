@@ -21,7 +21,7 @@ const salonClient = new Schema({
         default: 'A'
     },
 
-    createdAt: {            // Data do dia atual 
+    createdAt: {            
         type: Date,
         default: Date.now,
     }

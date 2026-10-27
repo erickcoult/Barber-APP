@@ -15,7 +15,7 @@ const file = new Schema({
         type: String,
         required: true
     },
-    createdAt: {            // Data do dia atual Criated at
+    createdAt: {            
         type: Date,
         default: Date.now
     }

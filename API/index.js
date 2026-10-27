@@ -22,6 +22,9 @@ app.set('port', 8000);
 // Routes
 app.use('/salon', require('./src/routes/salon.routes'));
 app.use('/service', require('./src/routes/service.routes'));
+app.use('/time', require('./src/routes/time.routes'));
+app.use('/professional', require('./src/routes/professional.routes'));
+
 
 // Start server
 app.listen(app.get('port'), () => {

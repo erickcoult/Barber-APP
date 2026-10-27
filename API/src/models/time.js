@@ -3,21 +3,22 @@ const Schema = mongoose.Schema;
 
 const time = new Schema({
     salonId: {
-            type: mongoose.Types.ObjectID,
-            ref: 'Salon',
-            required: true,
-        },
+        type: Schema.Types.ObjectId,
+        ref: 'Salon',
+        required: true,
+    },
 
     specialties: [
         {
-            type: mongoose.Types.ObjectID,
+            type: Schema.Types.ObjectId,
             ref: 'Service',
             required: true,
         }
     ],
+
     professional: [
         {
-            type: mongoose.Types.ObjectID,
+            type: Schema.Types.ObjectId,
             ref: 'Professional',
             required: true,
         }
@@ -38,10 +39,10 @@ const time = new Schema({
         required: true,
     },
 
-    createdAt: {            // Data do dia atual 
+    createdAt: {           
         type: Date,
         default: Date.now,
     }
 });
 
-module.exports= mongoose.model('Time', time);
+module.exports = mongoose.model('Time', time);
